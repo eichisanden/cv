@@ -1,0 +1,12 @@
+{
+  "name": "cv",
+  "scripts": {
+    "pdf": "md-to-pdf ./README.md > ./README.pdf"
+  },
+  "volta": {
+    "node": "20.3.0"
+  },
+  "dependencies": {
+    "md-to-pdf": "^5.2.4"
+  }
+}
