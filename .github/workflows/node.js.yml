@@ -29,5 +29,4 @@ jobs:
         git config user.email github-actions[bot]@users.noreply.github.com
         git add README.pdf
         git commit -m "README.pdf generated"
-        PULL_MERGE_BRANCH=${GITHUB_REF#refs/}
-        git push origin $PULL_MERGE_BRANCH
+        git push --force-with-lease origin ${GITHUB_REF#refs/}
