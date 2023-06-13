@@ -30,4 +30,4 @@ jobs:
         git add README.pdf
         git commit -m "generated README.pdf"
         echo "PULL_MERGE_BRANCH=${GITHUB_REF#refs/}"
-        git push origin $PULL_MERGE_BRANCH
+        git push origin HEAD:$PULL_MERGE_BRANCH
