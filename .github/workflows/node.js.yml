@@ -32,4 +32,4 @@ jobs:
         echo $GITHUB_REF
         PULL_MERGE_BRANCH=${GITHUB_REF#refs/}
         echo $PULL_MERGE_BRANCH
-        git push origin $PULL_MERGE_BRANCH
+        git push origin $GITHUB_REF
