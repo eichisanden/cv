@@ -25,14 +25,9 @@ jobs:
     - run: npm ci
     - run: npm run pdf
     - run: |
-        if [ -z "$(git status --porcelain)" ]; then
-          echo "No changes to commit"
-          exit 0
-        fi
-        git branch -a
         git config user.name github-actions[bot]
         git config user.email github-actions[bot]@users.noreply.github.com
+        git checkout -b work
         git add README.pdf
         git commit -m "README.pdf generated"
-        git log --graph
-        git push origin HEAD:${GITHUB_REF#refs/}
+        git push origin ${GITHUB_REF#refs/}
