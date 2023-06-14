@@ -2,11 +2,6 @@ name: build
 
 on:
   push:
-    branches: [ "main" ]
-    paths:
-      - 'README.md'
-  pull_request:
-    branches: [ "main" ]
     paths:
       - 'README.md'
 
@@ -27,7 +22,6 @@ jobs:
     - run: |
         git config user.name github-actions[bot]
         git config user.email github-actions[bot]@users.noreply.github.com
-        git checkout -b work
         git add README.pdf
         git commit -m "README.pdf generated"
         git push origin ${GITHUB_REF#refs/}
